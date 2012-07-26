@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html lang="en" b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
+    <%= partial 'partials/meta' %>
+    <%= stylesheet_link_tag 'application' %>  
+    <b:skin></b:skin>
+    <b:template-skin></b:template-skin>
+  </head>
+  <body expr:class='&quot; loading &quot;  + data:blog.pageType'>
+    <div id="oc">
+      <div id="ic">
+        <%= partial 'partials/header' %>
+        <div id="content">
+          <%= partial 'sections/left' %>
+          <%= partial 'sections/main' %>
+        </div>
+        <%= partial 'partials/footer' %>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

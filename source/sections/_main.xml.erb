@@ -1,0 +1,24 @@
+<b:section class='main' id='main' showaddelement='no'>
+  <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'>
+    <%= partial 'sections/includables/status-message' %>
+    <%= partial 'sections/includables/post' %>
+    <%= partial 'sections/includables/comment-form' %>
+    <%= partial 'sections/includables/comments' %>
+    <%= partial 'sections/includables/pagination' %>
+    <b:includable id='main' var='top'>
+      <b:include data='top' name='status-message'/>
+      <b:loop values='data:posts' var='post'>
+        <div class='post-outer'>
+          <b:include data='post' name='post'/>
+          <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+            <b:include data='post' name='comments'/>
+          </b:if>
+          <b:if cond='data:blog.pageType == &quot;item&quot;'>
+            <b:include data='post' name='comments'/>
+          </b:if>
+        </div>
+      </b:loop>
+      <b:include name='nextprev'/>
+    </b:includable>
+  </b:widget>
+</b:section>

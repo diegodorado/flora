@@ -1,0 +1,47 @@
+@import 'compass'
+
+#header
+  .title
+    margin-bottom: 35px
+    text-align: center
+    a
+      @extend .bauer
+      font-size: 75px
+      color: #000
+      +text-shadow(#c8c7c7 2px 2px 0)
+  .navbar
+    border-top: 1px
+    border-bottom: 1px
+    border-color: #808080
+    border-style: dotted
+    padding: 25px 0 15px 0
+    text-align: center
+    width: 100%
+    a
+      background: #fff
+      color: #7d7d7d
+      font-size: 16px
+      +inline-block
+      height: 30px
+      &:hover, &:focus, &:active
+        background: #fff
+      &:before
+        background: image-url("navbar-arrows.png") no-repeat
+        content: ""
+        display: inline-block
+        height: 30px
+        vertical-align: top
+        width: 30px
+      &:hover:before
+        background-position: 0 -30px
+        height: 30px
+      &.active
+        &:before
+          background-position: 4px -30px
+          +transform(rotate(90deg) scaleY(-1))
+        color: #1a1a1a
+      &:first-child
+        float: left
+      &:last-child
+        float: right
+

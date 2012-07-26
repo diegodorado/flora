@@ -1,0 +1,107 @@
+.widget.Blog
+  .post-outer
+    clear: both
+    margin-top: 50px
+    .fecha
+      @extend .courier
+      background: image-url("fondo-fecha.png") no-repeat scroll 0 0 transparent
+      color: #FFFFFF
+      font-size: 13px
+      height: 26px
+      line-height: 30px
+      margin-left: -92px
+      padding-top: 12px
+      text-indent: 18px
+
+
+      
+    h2 
+      margin-top: 40px
+      margin-bottom: 34px 
+      a
+        color: #1a1a1a
+        color: #333 //fix to slim font
+        font-size: 33px
+        letter-spacing: -1px
+
+    .post-body
+      //text-indent: 29px
+      color: #333
+      line-height: 28px
+      .tr-caption-container //imagen
+        padding: 0
+        margin: 0
+        margin-top: 50px
+        width: 100%
+        a 
+          display: block
+        img
+          display: block
+          width: 100%
+          height: auto
+          border: 1px solid #e0e0e0
+          border-width: 0 1px 1px 0
+          +border-radius(5px)
+          +box-shadow( 5px 8px 7px -4px #C0C0C0)
+        .tr-caption
+          @extend .courier
+          padding-top: 15px
+          color: #4d4d4d          
+          font-size: 13px
+          line-height: 18px
+          margin: 15px 75px 0 75px
+          text-align: center
+
+    .post-social
+      @extend .montserrat
+      margin: 25px 0 0 108px
+      overflow: hidden
+      *
+        color: #666
+        font-size: 9px
+      .post-social-left
+        float: left
+        width: 220px
+        *
+          font-size: 13px
+        a
+          background: image-url("fondo-comment.png") no-repeat scroll 0 0 transparent
+          float: left
+          height: 81px
+          line-height: 62px
+          padding-left: 37px
+          width: 128px
+          &:hover
+            background-position: 0 -81px
+            color: #000
+          span
+            margin-right: 45px
+        .comment-link
+          font-size: 9px
+      .post-social-right
+        float: left
+        height: 64px
+        padding-top: 11px
+        width: 260px
+        border-left: 1px dotted gray
+        p
+          margin: 8px 44px 0 49px
+          float: left
+        .redes
+          float: left
+          a
+            background: image-url("fondo-comment-redes.png") no-repeat scroll 0 0 transparent
+            clear: both
+            color: #000
+            display: block
+            height: 22px
+            line-height: 22px
+            +opacity(0.6)
+            padding-left: 31px
+            &:hover
+              +opacity(1)
+            &.fb
+              margin-bottom: 4px
+            &.tw
+              background-position: 0 -22px
+

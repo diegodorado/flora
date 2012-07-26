@@ -1,0 +1,35 @@
+<b:includable id='post' var='post'>
+  <div class='post-labels'>
+    <b:loop values='data:post.labels' var='label'><div expr:class='data:label.name'/></b:loop>
+  </div>    
+  <a expr:name='data:post.id'/>
+  <h4 class="fecha"><data:post.dateHeader/></h4>
+  <h2><a expr:href='data:post.url'><data:post.title/></a></h2>
+  <div class='post-body'>
+    <data:post.body/>
+  </div>
+  <b:if cond='data:post.hasJumpLink'>
+    <div class='jump-link'>
+      <a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'>ver más</a>
+    </div>
+  </b:if>
+  <div class="post-social">
+    <div class="post-social-left">
+      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
+        <span><data:post.numComments/></span>
+        COMENTARIO<b:if cond='data:post.numComments != 1'>S</b:if>
+      </a>
+    </div>
+    <div class="post-social-right">
+      <p>COMPARTIR</p>
+      <div class="redes">
+        <a class="fb" expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' title='compartir en facebook' target='_blank'>
+          FACEBOOK
+        </a>
+        <a class="tw" expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' title='compartir en twitter' target='_blank'>
+          TWITTER
+        </a>
+      </div>
+    </div>
+  </div>
+</b:includable>

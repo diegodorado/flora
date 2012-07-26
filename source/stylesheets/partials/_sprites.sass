@@ -1,0 +1,23 @@
+@import "compass"
+
+@import "footer/*.png"
+
+$footer-sprite-dimensions: true
+
++all-footer-sprites
+
+.footer-sprite
+  text-indent: -9999px
+  display: block
+
+@import "arrows/*.png"
+
+$arrows-sprite-dimensions: true
+
++all-arrows-sprites
+
+.arrows-sprite
+  text-indent: 9999px //positive, since it will be aligned right
+  +inline-block
+  vertical-align: middle
+

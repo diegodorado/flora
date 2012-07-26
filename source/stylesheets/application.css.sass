@@ -1,0 +1,65 @@
+@import "compass/reset"
+@import "partials/sprites"
+@import "partials/overrides"
+@import "partials/reset"
+@import "partials/fonts"
+@import "partials/header"
+@import "partials/footer"
+@import "partials/archive"
+@import "partials/post"
+@import "partials/pager"
+@import "partials/widgets"
+
+  
+#content .left ul li a
+  @extend .courier
+
+body
+  @extend .glegloo
+  a
+    text-decoration: none
+
+h1, h3
+  color: #000
+
+
+h3, .widget h2
+  font-size: 20px
+
+p
+  line-height: 28px
+
+
+#oc
+  background: image-url("guardas.gif") repeat-x
+  padding: 170px 0 69px 0
+  overflow: hidden
+
+#ic
+  margin: 0 auto
+  width: 1010px
+
+#content
+  border-bottom: 1px solid #808080
+  font-size: 15px
+  margin-bottom: 3px
+  min-height: 100px
+  overflow: hidden
+  .section
+    float: left
+    &.sidebar-left //250
+      padding-top: 50px
+      width: 169px
+      margin-right: 81px
+      a
+        color: #4d4d4d
+      ul a
+        line-height: 32px
+    &.main //756
+      background: image-url('dot.png') repeat-y
+      padding-left: 84px
+      width: 672px
+
+
+
+
