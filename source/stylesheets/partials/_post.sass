@@ -2,19 +2,21 @@
   .post-outer
     clear: both
     margin-top: 50px
-    .fecha
+    h4
+      .date
+        +inline-block
+        width: 274px
+        margin-right: 30px
+        text-align: center
+      .biblioteca-tag, .portfolio-tag
+        display: none
       @extend .courier
-      background: image-url("fondo-fecha.png") no-repeat scroll 0 0 transparent
       color: #FFFFFF
       font-size: 13px
-      height: 26px
-      line-height: 30px
+      height: 28px
+      line-height: 28px
       margin-left: -92px
-      padding-top: 12px
-      text-indent: 18px
-
-
-      
+      padding-top: 9px
     h2 
       margin-top: 40px
       margin-bottom: 34px 
@@ -28,21 +30,22 @@
       //text-indent: 29px
       color: #333
       line-height: 28px
+      p
+        margin-bottom: 14px
+      img
+        display: block
+        width: 100%
+        height: auto
+        border: 1px solid #e0e0e0
+        border-width: 0 1px 1px 0
+        +border-radius(5px)
+        +box-shadow( 5px 8px 7px -4px #C0C0C0)
       .tr-caption-container //imagen
         padding: 0
-        margin: 0
-        margin-top: 50px
+        margin: 50px 0 20px
         width: 100%
         a 
           display: block
-        img
-          display: block
-          width: 100%
-          height: auto
-          border: 1px solid #e0e0e0
-          border-width: 0 1px 1px 0
-          +border-radius(5px)
-          +box-shadow( 5px 8px 7px -4px #C0C0C0)
         .tr-caption
           @extend .courier
           padding-top: 15px
@@ -104,4 +107,82 @@
               margin-bottom: 4px
             &.tw
               background-position: 0 -22px
+    #comments
+      display: none
+      
+    &.biblioteca
+      h4
+        .biblioteca-tag
+          +inline-block
+
+    &.portfolio
+      h4
+        .portfolio-tag
+          color: #333
+          +inline-block
+
+//changes for different sections
+//body.index
+//body.biblioteca
+//body.portfolio
+          
+body.compras
+  .widget.Blog
+    .post-outer
+      margin: 50px 0 180px
+      clear: both
+      overflow: hidden
+      h4
+        display: none
+      h2 
+        display: none
+      .post-body
+        h2 
+          clear: both
+          display: block
+          margin: 0
+          color: #333 //fix to slim font
+          font-size: 33px
+          text-transform: uppercase
+        br, .separator 
+          display: none
+        .tr-caption-container //imagen
+          width: 163px
+          margin: 21px 5px 50px 0
+          float: left
+          a
+            overflow: hidden
+            border: 1px solid #e0e0e0
+          img
+            +border-radius(none)
+            +box-shadow(none)
+            height: 119px
+          .tr-caption
+            @extend .glegloo
+            font-size: 11px
+            color: #808080
+            text-align: left
+            line-height: 16px
+            margin-top: 0
+            a, br 
+              display: inline
+            a
+              border: 0
+              line-height: 40px
+              font-size: 15px
+              color: #333
+              &:before
+                content: "\00B7  "
+      .post-social
+        display: none
+        
+body.que-hace
+  .widget.Blog
+    .post-outer
+      margin: 18px 0 70px
+      overflow: hidden
+      h4
+        display: none
+      .post-social
+        display: none
 

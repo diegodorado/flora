@@ -1,41 +1,58 @@
 #pager
   border-top: 1px dotted #808080
-  margin: 80px 0 20px
+  margin: 80px 0 0
   overflow: hidden
-  padding-top: 35px
-  text-align: center
+  clear: both
   a
+    padding: 35px 0 20px
     @extend .montserrat
     color: #7d7d7d
     font-size: 9px
     height: 30px
     line-height: 18px
+    display: block
+    width: 33%
+    text-align: center
+    float: left
     &:hover
       color: #000
   .page.newer
-    float: left
-  a
-    &.newer
-      &:hover, &:focus, &:active
-        background: none no-repeat scroll 0 0 #fff
-      &:before
-        +transform(rotate(180deg) scaleY(-1))
-    &.page.newer:hover:before
-      +transform(rotate(180deg) scaleY(-1))
-    &.newer:before
-      background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
-      content: ""
-      display: inline-block
-      height: 30px
-      vertical-align: top
-      width: 30px
-    &.page.newer:hover:before
-      background-position: 5px 0
+    text-align: left
   .page.older
-    background: image-url("navbar-arrows.png") no-repeat scroll right -30px transparent
-    float: right
-    padding-right: 35px
-    &:hover
-      background-position: right 0
+    text-align: right
+
+  .page.newer:before
+    +transform(rotate(180deg) scaleY(-1))
+    background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
+    content: ""
+    display: inline-block
+    height: 30px
+    vertical-align: top
+    width: 30px
+  .page.newer:hover:before
+    background-position: 5px 0
+
+  .page.older:after
+    background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
+    content: ""
+    display: inline-block
+    height: 30px
+    vertical-align: top
+    width: 30px
+  .page.newer:hover:before
+    background-position: 5px 0
+
+
+
+//changes for different sections
+body.index
+body.biblioteca
+body.portfolio
+body.compras
+  #pager
+    display: none
+body.que-hace
+  #pager
+    display: none
 
 

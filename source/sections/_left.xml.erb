@@ -1,8 +1,13 @@
 <b:section class='sidebar-left' id='sidebar-left' preferred='no'>
+  <b:widget xmlns:b="http://www.google.com/2005/gml/b" id="HTML1" locked="false" type="HTML">
+  <b:includable id="main">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="widget-content">
+      <%= partial 'partials/submenu' %>
+    </div>
+    <b:include name="quickedit"/>
+  </b:includable>
+  </b:widget>
+
   <b:widget id='BlogArchive1' locked='true' title='Archivo' type='BlogArchive' />
-  <b:widget id='LinkList1' locked='true' title='Street Style' type='LinkList' />
-  <b:widget id='Image1' locked='false' type='Image' />
-  <b:widget id='Header1' locked='false' title='' type='Header' />
-  <b:widget id='Attribution1' locked='false' title='' type='Attribution' />
-  <b:widget id='HTML1' locked='false' title='Search' type='HTML' />
+  <b:widget id='LinkList1' locked='true' title='Recomendados' type='LinkList' />
 </b:section>

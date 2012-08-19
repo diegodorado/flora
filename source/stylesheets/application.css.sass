@@ -1,5 +1,6 @@
 @import "compass/reset"
 @import "partials/sprites"
+@import "partials/colors"
 @import "partials/overrides"
 @import "partials/reset"
 @import "partials/fonts"
@@ -18,6 +19,7 @@ body
   @extend .glegloo
   a
     text-decoration: none
+    outline: 0
 
 h1, h3
   color: #000
@@ -39,7 +41,13 @@ p
   margin: 0 auto
   width: 1010px
 
+body.loading
+  #content
+    +transparent
+
 #content
+  +opaque
+  +transition(opacity 2s ease-in)
   border-bottom: 1px solid #808080
   font-size: 15px
   margin-bottom: 3px

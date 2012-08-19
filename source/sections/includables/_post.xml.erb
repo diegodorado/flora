@@ -3,7 +3,11 @@
     <b:loop values='data:post.labels' var='label'><div expr:class='data:label.name'/></b:loop>
   </div>    
   <a expr:name='data:post.id'/>
-  <h4 class="fecha"><data:post.dateHeader/></h4>
+  <h4>
+    <span class="date"><data:post.dateHeader/></span>
+    <span class="biblioteca-tag">la biblioteca de flora</span>
+    <span class="portfolio-tag">portfolio</span>    
+  </h4>
   <h2><a expr:href='data:post.url'><data:post.title/></a></h2>
   <div class='post-body'>
     <data:post.body/>

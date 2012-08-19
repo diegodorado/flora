@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>testpage</title>
+  <%= partial 'partials/meta' %>
+  <%= stylesheet_link_tag 'application' %>  
+  <link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/1135444933-widget_css_2_bundle.css' />
+  <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  <![endif]-->  
+</head>
+<body class="loading <%= yield_content :body_classes %>">
+  <div id="oc">
+    <div id="ic">
+      <%= partial 'partials/header' %>
+      <div id="content">
+        <div class="sidebar-left section">
+          <div class="widget HTML">
+            <div class="widget-content">
+              <%= partial 'partials/submenu' %>
+            </div>
+          </div>
+          <%= partial 'partials/texts' %>
+          <%= partial 'partials/archivo' %>
+          <%= partial 'partials/link_list' %>
+          <%= partial 'partials/image' %>
+          <%= partial 'partials/image' %>
+        </div>
+        <div class="main section">
+          <div class="widget Blog" id="Blog1">
+            <%= yield %>
+            <%= partial 'partials/pager' %>
+          </div>        
+        </div>
+      </div>
+      <%= partial 'partials/footer' %>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application' %>
+</body>
+</html>

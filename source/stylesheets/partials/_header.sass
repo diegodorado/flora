@@ -14,34 +14,38 @@
     border-bottom: 1px
     border-color: #808080
     border-style: dotted
-    padding: 25px 0 15px 0
     text-align: center
     width: 100%
+    height: auto
+    overflow: hidden
     a
-      background: #fff
       color: #7d7d7d
       font-size: 16px
-      +inline-block
-      height: 30px
-      &:hover, &:focus, &:active
-        background: #fff
+      display: block
+      height: 72px
+      width: 33%
+      float: left
+      line-height: 72px
+      text-align: center
       &:before
         background: image-url("navbar-arrows.png") no-repeat
         content: ""
-        display: inline-block
+        +inline-block
         height: 30px
-        vertical-align: top
         width: 30px
+        margin-top: 5px
       &:hover:before
         background-position: 0 -30px
-        height: 30px
-      &.active
-        &:before
-          background-position: 4px -30px
-          +transform(rotate(90deg) scaleY(-1))
-        color: #1a1a1a
-      &:first-child
-        float: left
-      &:last-child
-        float: right
+      &.que-hace-link
+        text-align: left
+      &.compras-link
+        text-align: right
 
+//style 'active' submenu link
+body.biblioteca #header .navbar .biblioteca-link,
+body.compras #header .navbar .compras-link,
+body.que-hace #header .navbar .que-hace-link,
+  &:before
+    background-position: 4px -30px
+    +transform(rotate(90deg) scaleY(-1))
+  color: #1a1a1a

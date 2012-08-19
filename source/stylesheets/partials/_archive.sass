@@ -13,22 +13,23 @@
           overflow: hidden
           .toggle
             position: absolute
-            right: 11px
+            right: 0
             top: 0
             height: 36px
             line-height: 36px
-            width: 28px
+            width: 39px
             text-align: right
             .zippy
-              @extend .arrows-dark-pink
+              text-indent: 110%
+              position: absolute
+              right: 8px
+              top: 8px // (36-20)  /2
           .post-count-link //year number
-            color: #4d4d4d
             text-indent: 6px
-            border: 1px solid white
             display: block
             margin: 2px
             height: 30px
-            line-height: 30px
+            line-height: 34px
           .post-count
             display: none
 
@@ -37,31 +38,32 @@
           .hierarchy
             display: none //or height 0
 
+          .post-count-link //year number
+            color: #4d4d4d
+            border: 1px solid white
+
         .archivedate.expanded
           background: none
           .toggle
             .zippy
-              @extend .arrows-white            
-              +rotate(90deg)
+              top: 11px // (36-14)  /2
+              @extend .arrows-active
           .post-count-link //year number
-            background: #00adb5          
+            margin: 0 0 18px
             color: #fff
-            border: 3px solid #dbefdb
-            margin: 0
           .hierarchy //again: one ul per month
             .archivedate
-              margin: 12px 0 0
+              margin: 12px 0
               background: none
-              
               .post-count-link //month text
-                line-height: 20px
+                font-size: 14px
+                line-height: 14px
                 color: #4d4d4d
                 border: 0
                 display: inline
-                height: 22px
+                height: 14px
                 background: none
               .post-count
                 display: inline
-                color: #00adb5
                 font-size: 12px
 

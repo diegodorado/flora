@@ -16,28 +16,35 @@
       +horizontal-list(3px)
       margin-left: 42px      
     .contact
+      background: image-url('email-bg4.png') center 50px no-repeat
       clear: both
       line-height: 12px
+      padding-bottom: 35px
       h6
         @extend .montserrat
         text-transform: uppercase
         font-size: 10px
         letter-spacing: 1px
-        margin: 29px 0 13px
+        padding: 29px 0 8px
         color: #666
+        cursor: pointer
       .email
-        background: image-url('email-bg.png')
-        width:  image-width('email-bg.png')
-        height:  image-height('email-bg.png')
-        line-height:  image-height('email-bg.png')
+        background: image-url('email-bg.png') top center no-repeat
+        height:  0px
+        line-height:  75px
         display: block
         color: #444
+        overflow: hidden
+        +transition(height 1s ease)        
         span
           @extend .courier
           font-size: 12px
           margin-left: -7px
         &:hover        
           color: #000
+      &.open      
+        .email
+          height:  image-height('email-bg.png')
   .center
     float: left
     margin: 0 90px 0 156px
@@ -56,6 +63,8 @@
     .license
       +horizontal-list
       margin-top: 30px
+      a
+        cursor: default
   .right
     float: right
     padding-top: 10px
@@ -66,4 +75,15 @@
         margin: 25px auto
       .footer-crudo
         margin-bottom: 18px
+
+
+
+
+
+
+body.index, body.biblioteca, body.compras
+  #footer
+    .footer-otc,.footer-crudo
+      +transparent
+      cursor: default //to simulate ther is no link
 

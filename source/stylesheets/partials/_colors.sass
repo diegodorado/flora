@@ -1,0 +1,69 @@
+$color-a: #126983
+$color-b: #00adb5
+$color-c: #112f69
+$color-d: #2461b0
+$color-e: #5d144d
+$color-f: #de4261
+$color-g: #ff7570
+$color-h: #f37581
+$color-i: #009E8C
+
+@function color($color)
+  @if $color == 'a'
+    @return $color-a
+  @if $color == 'b'
+    @return $color-b
+  @if $color == 'c'
+    @return $color-c
+  @if $color == 'd'
+    @return $color-d
+  @if $color == 'e'
+    @return $color-e
+  @if $color == 'f'
+    @return $color-f
+  @if $color == 'g'
+    @return $color-g
+  @if $color == 'h'
+    @return $color-h
+  @if $color == 'i'
+    @return $color-i
+  
+@each $i in 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i'
+  body.color-#{$i}
+    .widget.Blog
+      .post-outer h4
+        @extend .date-bg-#{$i}
+      .post-outer.biblioteca h4
+        @extend .date-bg-#{$i}-b
+      .post-outer.portfolio h4
+        @extend .date-bg-#{$i}-p
+      .post-body a
+        color: color($i)
+
+    .widget.LinkList li
+      padding-top: 8px
+      a
+        border-color: color($i)
+
+    #footer .contact h6:hover
+      color: color($i)
+    
+    @each $icon in 'diseno' 'fb' 'tw' 'rss'
+      #footer .footer-#{$icon}:hover
+        @extend .footer-#{$icon}-#{$i}
+
+        
+  .archivedate.archive-color-#{$i}
+    .toggle
+      .zippy
+        @extend .arrows-#{$i}
+    .hierarchy //again: one ul per month
+      .archivedate
+        .post-count
+          color: color($i)
+    &.expanded
+      .post-count-link //year number
+        background: color($i)
+        border: 3px solid tint(color($i),40%)
+
+

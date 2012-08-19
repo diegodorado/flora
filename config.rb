@@ -22,8 +22,14 @@ end
 # Per-page layout changes:
 # 
 # With no layout
-page "/test.html", :layout => false
+#page "/test.html", :layout => false
 page "/template.xml", :layout => false
+page "/p/que-hace-esta-chica.html", :proxy => "/que-hace.html"
+page "/search/label/biblioteca", :proxy => "/biblioteca.html"
+page "/search/label/portfolio", :proxy => "/portfolio.html"
+page "/p/flora-va-de-compras.html", :proxy => "/compras.html"
+
+
 # 
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
@@ -61,13 +67,13 @@ module MyAssetHandler
   module InstanceMethods
     def asset_url(path, prefix="")
       original = super(path, prefix)
-      "http://localhost:4567" + original
-      #"http://onthecorner.com.ar/flora-assets" + original
+      #"http://localhost:4567" + original
+      "http://onthecorner.com.ar/flora-assets" + original
     end
   end
 end
 
-activate MyAssetHandler
+
 
 #activate :relative_assets
 #activate :asset_hash
@@ -75,6 +81,9 @@ activate MyAssetHandler
 # Build-specific configuration
 configure :build do
 
+  #activate only on build
+  activate MyAssetHandler
+  
   compass_config do |config|
     config.output_style = :compact
     config.asset_host do |asset|
@@ -103,5 +112,5 @@ configure :build do
   # activate :smusher
   
   # Or use a different image path
-  set :http_path, "http://localhost:4567"
+  #set :http_path, "http://localhost:4567"
 end

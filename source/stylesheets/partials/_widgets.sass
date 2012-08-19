@@ -1,14 +1,105 @@
-
 .section.sidebar-left 
   .widget 
     h2
       text-transform: lowercase
+
+
+.widget.Text
+  margin-top: 9px
+  .widget-content
+    color: #333
+    font-size: 12px
+    line-height: 28px
   
 .widget.LinkList li
-  padding-top: 8px
+  padding: 0
   a
-    border-bottom: 1px dotted #00adb5
+    @extend .courier  
+    border-style: dotted
+    border-width: 0 0 1px 
     padding-bottom: 6px
     text-transform: lowercase
+    font-size: 14px
+    line-height: 32px
     &:hover
       color: #00a08e
+      
+
+//que hace widget
+#content
+  .widget.HTML
+    .links
+      li
+        margin-bottom: 5px
+        a
+          @extend .links-bg-qh
+          @extend .courier
+          @extend .white-shadow
+          color: #FFFFFF
+          font-size: 13px
+          line-height: 49px
+          text-indent: 32px
+
+    .contact-box
+      margin-top: 20px
+      width: 170px
+      text-align: center
+      h3
+        line-height: 50px
+        color: #333
+        background: image-url('email-bg2.png') no-repeat bottom center
+        padding-bottom: image-height('email-bg2.png')
+        cursor: pointer
+      a
+        @extend .courier
+        display: block
+        font-size: 13px 
+        height: 0px
+        overflow: hidden
+        +transition(height 1s ease)
+        &:hover        
+          color: #000
+              
+      &.open
+        a
+          height: 20px
+      
+      
+//which to show in each section
+
+.sidebar-left
+  .widget
+    display: none
+
+
+body.index
+  .sidebar-left
+    .widget.BlogArchive, .widget.LinkList, .widget.Image
+      display: block
+body.biblioteca
+  .sidebar-left
+    .widget.biblioteca-text
+      display: block
+      .title
+        display: none
+body.portfolio
+  .sidebar-left
+    .widget.portfolio-text
+      display: block
+body.compras
+  .sidebar-left
+    .widget.compras-text
+      display: block
+      .title
+        display: none
+body.que-hace
+  #content
+    .sidebar-left.section
+      padding-top: 60px
+      .widget.HTML
+        display: block
+
+
+
+
+

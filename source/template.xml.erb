@@ -5,7 +5,10 @@
     <b:include data='blog' name='all-head-content'/>
     <title><data:blog.pageTitle/></title>
     <%= partial 'partials/meta' %>
-    <%= stylesheet_link_tag 'application' %>  
+    <%= stylesheet_link_tag 'application' %>
+    <!--[if lt IE 9]>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->    
     <b:skin></b:skin>
     <b:template-skin></b:template-skin>
   </head>
