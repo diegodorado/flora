@@ -29,10 +29,6 @@ set_text_widget_classes = ->
     $(@).addClass "#{$(@).find('.title').text()}-text"
 
 format_posts = ->
-
-  $('#pager').prepend(fake) if $('#pager .older').size() is 0
-
-
   $('.post-outer .post-body').each ->
     $(@).find('div, center, span').contents().unwrap()
     $(@).find('div, center, span').remove()
@@ -73,7 +69,7 @@ colorize= ->
   if $('body').hasClass 'que-hace'
     $('body').addClass "color-i"
   else
-    colors = 'abcdefgh'.split('')
+    colors = 'hecfdbga'.split('')
     rand	= Math.floor(Math.random() * (colors.length - 1))
     colors = colors[rand..(colors.length - 1)].concat colors[0...rand]
     selected = colors.shift()
@@ -111,6 +107,8 @@ $ ->
   colorize()
   bind_contact_links()
   pager_hack()
+  #open external links in new window
+  $(document.links).filter( () -> @hostname != window.location.hostname).attr('target', '_blank')
   $('body').removeClass 'loading'
 
 

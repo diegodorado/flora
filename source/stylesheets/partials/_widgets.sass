@@ -53,7 +53,7 @@
       a
         @extend .courier
         display: block
-        font-size: 13px 
+        font-size: 11px 
         height: 0px
         overflow: hidden
         +transition(height 1s ease)
@@ -75,6 +75,10 @@
 body.index
   .sidebar-left
     .widget.BlogArchive, .widget.LinkList, .widget.Image
+      display: block
+body.archive
+  .sidebar-left
+    .widget.BlogArchive
       display: block
 body.biblioteca
   .sidebar-left
