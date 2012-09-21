@@ -364,6 +364,7 @@ body.index #footer .footer-otc, body.index #footer .footer-crudo, body.bibliotec
 .widget.Blog .post-outer .post-body .tr-caption-container { padding: 0; margin: 50px 0 20px; width: 100%; }
 .widget.Blog .post-outer .post-body .tr-caption-container a { display: block; }
 .widget.Blog .post-outer .post-body .tr-caption-container .tr-caption { padding-top: 15px; color: #4d4d4d; font-size: 13px; line-height: 18px; margin: 15px 75px 0 75px; text-align: center; }
+.widget.Blog .post-outer .post-body .tr-caption-container .tr-caption a { display: inline; }
 .widget.Blog .post-outer .post-social { margin: 25px 0 0 108px; overflow: hidden; }
 .widget.Blog .post-outer .post-social * { color: #666666; font-size: 9px; }
 .widget.Blog .post-outer .post-social .post-social-left { float: left; width: 220px; }
