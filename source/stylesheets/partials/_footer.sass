@@ -1,4 +1,5 @@
 @import "compass"
+@import "partials/mobile"
 
 #footer
   border-top: 1px solid #808080
@@ -12,6 +13,9 @@
     padding-top: 26px
     text-align: center
     width: 180px
+    +mobile
+      float: none
+      margin: auto
     .social-links    
       +horizontal-list(3px)
       margin-left: 42px      
@@ -20,6 +24,8 @@
       clear: both
       line-height: 12px
       padding-bottom: 35px
+      +mobile
+        padding-bottom: 0px
       h6
         @extend .montserrat
         text-transform: uppercase
@@ -49,6 +55,11 @@
     float: left
     margin: 0 90px 0 156px
     width: 480px
+    +mobile
+      width: 90%
+      margin: 5%
+      float: none
+      text-align: center
     h2
       margin-bottom: 11px
       a
@@ -63,11 +74,17 @@
     .license
       +horizontal-list
       margin-top: 30px
+      +mobile
+        width: 160px
+        margin-left: auto
+        margin-right: auto
       a
         cursor: default
   .right
     float: right
     padding-top: 10px
+    +mobile
+      float: none
     .partners
       a
         margin: 0 auto
@@ -86,4 +103,6 @@ body.index, body.biblioteca, body.compras
     .footer-otc,.footer-crudo
       +transparent
       cursor: default //to simulate ther is no link
+      +mobile
+        display: none
 

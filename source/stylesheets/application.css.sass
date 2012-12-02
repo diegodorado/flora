@@ -10,8 +10,10 @@
 @import "partials/post"
 @import "partials/pager"
 @import "partials/widgets"
+@import "partials/mobile"
 
-  
+
+
 #content .left ul li a
   @extend .courier
 
@@ -40,6 +42,8 @@ p
 #ic
   margin: 0 auto
   width: 1010px
+  +mobile
+    width: 100%
 
 body.loading
   #content
@@ -63,11 +67,19 @@ body.loading
         color: #4d4d4d
       ul a
         line-height: 32px
+      +mobile
+        display: none
     &.main //756
       background: image-url('dot.png') repeat-y
       padding-left: 84px
       width: 672px
+      +mobile
+        background: none
+        padding-left: 5%
+        width: 90%
 
-
-
+ 
+    +mobile
+      float: none
+      
 

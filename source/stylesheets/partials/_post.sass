@@ -1,8 +1,16 @@
+@import "partials/mobile"
+z
 .widget.Blog
   .post-outer
     clear: both
     margin-top: 50px
     h4
+      @extend .courier
+      color: #FFFFFF
+      font-size: 13px
+      margin-left: -92px
+      +mobile
+        margin-left: -8px
       span
         padding-top: 12px
         height: 25px
@@ -14,10 +22,6 @@
         text-align: center
       .biblioteca-tag, .portfolio-tag
         display: none
-      @extend .courier
-      color: #FFFFFF
-      font-size: 13px
-      margin-left: -92px
     h2 
       margin-top: 40px
       margin-bottom: 34px 
@@ -64,21 +68,33 @@
       @extend .montserrat
       margin: 25px 0 0 108px
       overflow: hidden
+      +mobile
+        margin: 0
+
       *
         color: #666
         font-size: 9px
       .post-social-left
         float: left
         width: 220px
+        +mobile
+          width: 45%
+          margin-right: 10%
+
         *
           font-size: 13px
         a
           background: image-url("fondo-comment.png") no-repeat scroll 0 0 transparent
           float: left
           height: 81px
+          overflow: hidden
           line-height: 62px
           padding-left: 37px
           width: 128px
+          +mobile
+            width: 55px
+            float: right
+
           &:hover
             background-position: 0 -81px
             color: #000
@@ -92,9 +108,15 @@
         padding-top: 11px
         width: 260px
         border-left: 1px dotted gray
+        +mobile
+          border-left: 0
+          width: 45%
+
         p
           margin: 8px 44px 0 49px
           float: left
+          +mobile
+            display: none
         .redes
           float: left
           a
@@ -119,6 +141,8 @@
       h4
         .biblioteca-tag
           +inline-block
+          +mobile
+            display: none
 
     &.portfolio
       padding-bottom: 50px
@@ -126,6 +150,8 @@
         .portfolio-tag
           color: #333
           +inline-block
+          +mobile
+            display: none
       .post-social
         display: none
 

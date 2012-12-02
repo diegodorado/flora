@@ -1,4 +1,5 @@
 @import 'compass'
+@import "partials/mobile"
 
 #header
   .title
@@ -18,6 +19,8 @@
     width: 100%
     height: auto
     overflow: hidden
+    +mobile
+      //display: none
     a
       color: #7d7d7d
       font-size: 16px

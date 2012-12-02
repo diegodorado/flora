@@ -1,3 +1,5 @@
+@import "partials/mobile"
+
 #pager
   border-top: 1px dotted #808080
   margin: 80px 0 0
@@ -18,8 +20,14 @@
       color: #000
   .page.newer
     text-align: left
+    +mobile
+      color: transparent
+      font-size: 1
   .page.older
     text-align: right
+    +mobile
+      color: transparent
+      font-size: 1
 
   .page.newer:before
     +transform(rotate(180deg) scaleY(-1))
