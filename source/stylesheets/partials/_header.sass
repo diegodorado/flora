@@ -3,13 +3,15 @@
 
 #header
   .title
+    @extend .bauer
     margin-bottom: 35px
     text-align: center
+    font-size: 75px
+    +text-shadow(#c8c7c7 2px 2px 0)
+    +mobile
+      font-size: 40px
     a
-      @extend .bauer
-      font-size: 75px
       color: #000
-      +text-shadow(#c8c7c7 2px 2px 0)
   .navbar
     border-top: 1px
     border-bottom: 1px
@@ -20,8 +22,17 @@
     height: auto
     overflow: hidden
     +mobile
-      //display: none
+      width: 86%
+      margin: 0 7%
+      padding: 9px 0
     a
+      +mobile
+        height: 39px
+        width: 100%
+        float: none
+        line-height: 39px
+        text-align: left
+        font-size: 14px
       color: #7d7d7d
       font-size: 16px
       display: block
@@ -43,6 +54,8 @@
         text-align: left
       &.compras-link
         text-align: right
+        +mobile
+          text-align: left
 
 //style 'active' submenu link
 body.biblioteca #header .navbar .biblioteca-link,

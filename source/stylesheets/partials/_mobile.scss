@@ -57,6 +57,14 @@ $units: 1px;
     }
 }
 
+@mixin desktop()
+{
+  @include min-screen(900){
+      @content;
+    }
+}
+
+
 @mixin screen($res-first, $res-last: $res-first)
 {
   @if $res-first == $res-last

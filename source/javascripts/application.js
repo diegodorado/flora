@@ -4,5 +4,6 @@
 //
 // =require 'jquery-1.6.2.min.js'
 // =require 'jquery-ui-1.8.15.min.js'
+// =require 'jquery.fittext.js'
 // =require 'app'
 

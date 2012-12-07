@@ -18,37 +18,51 @@
     float: left
     &:hover
       color: #000
-  .page.newer
-    text-align: left
+
+    &.newer
+      text-align: left
+    &.older
+      text-align: right
+
     +mobile
-      color: transparent
-      font-size: 1
-  .page.older
-    text-align: right
-    +mobile
-      color: transparent
-      font-size: 1
+      display: block
+      text-indent: -2000px
+      text-align: left
+      padding: 0
+      margin: 35px 0 20px
+      width: 50%
+      &:hover
+        background-position: 50% 0
+      &.newer, &.older
+        background: image-url("navbar-arrows.png") no-repeat scroll 50% -30px transparent
+        text-align: left
+      &.newer
+        +transform(rotate(180deg) scaleY(-1))
+      &.home
+        display: none
+      
+        
+
+  .page.newer:before, .page.older:after
+    background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
+    content: ""
+    display: inline-block
+    height: 30px
+    vertical-align: top
+    width: 30px
 
   .page.newer:before
     +transform(rotate(180deg) scaleY(-1))
-    background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
-    content: ""
-    display: inline-block
-    height: 30px
-    vertical-align: top
-    width: 30px
-  .page.newer:hover:before
+    +mobile
+      display: none
+
+  .page.newer:hover:before, .page.older:hover:after
     background-position: 5px 0
 
   .page.older:after
-    background: image-url("navbar-arrows.png") no-repeat scroll 5px -30px transparent
-    content: ""
-    display: inline-block
-    height: 30px
-    vertical-align: top
-    width: 30px
-  .page.newer:hover:before
-    background-position: 5px 0
+    +mobile
+      display: none
+  
 
 
 

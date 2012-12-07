@@ -95,7 +95,10 @@ pager_hack = ->
   fake = '<a class="page" href="#"></a>'
   $('#pager').prepend(fake) if $('#pager .newer').size() is 0
   $('#pager').append(fake) if $('#pager .older').size() is 0
-  
+
+fit_text = ->  
+
+  $("#header .title").fitText(1.33, { minFontSize: '40px', maxFontSize: '75px' })
   
 $ ->
   kill_lightbox()
@@ -110,5 +113,5 @@ $ ->
   #open external links in new window
   $(document.links).filter( () -> @hostname != window.location.hostname).attr('target', '_blank')
   $('body').removeClass 'loading'
-
+  fit_text()
 

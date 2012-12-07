@@ -35,9 +35,12 @@ p
 
 
 #oc
-  background: image-url("guardas.gif") repeat-x
+  background: image-url("guardas.gif") repeat-x top center
   padding: 170px 0 69px 0
   overflow: hidden
+  +mobile
+    background-image: image-url("guardas-320.gif")
+    padding-top: 120px
 
 #ic
   margin: 0 auto
@@ -75,8 +78,8 @@ body.loading
       width: 672px
       +mobile
         background: none
-        padding-left: 5%
-        width: 90%
+        padding-left: 7%
+        width: 86%
 
  
     +mobile

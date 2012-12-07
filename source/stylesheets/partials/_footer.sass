@@ -56,21 +56,29 @@
     margin: 0 90px 0 156px
     width: 480px
     +mobile
-      width: 90%
-      margin: 5%
+      width: 86%
+      margin: 2% 7%
       float: none
       text-align: center
     h2
       margin-bottom: 11px
+      +mobile
+        margin-bottom: 14px
+
       a
         @extend .bauer
         color: #000
         font-size: 44px
         +text-shadow(#c8c7c7 2px 2px 0)
+        +mobile
+          font-size: 34px
     p
       @extend .courier  
       font-size: 14px
       line-height: 28px
+      +mobile
+        font-size: 12px
+        line-height: 24px
     .license
       +horizontal-list
       margin-top: 30px

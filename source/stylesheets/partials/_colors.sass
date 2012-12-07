@@ -1,3 +1,5 @@
+@import "partials/mobile"
+
 $color-a: #126983
 $color-b: #00adb5
 $color-c: #112f69
@@ -33,10 +35,16 @@ $color-i: #009E8C
     .widget.Blog
       .post-outer h4
         @extend .date-bg-#{$i}
+        +mobile
+          width: 100%
       .post-outer.biblioteca h4
         @extend .date-bg-#{$i}-b
+        +mobile
+          width: 100%
       .post-outer.portfolio h4
         @extend .date-bg-#{$i}-p
+        +mobile
+          width: 100%
       .post-body a
         color: color($i)
 
