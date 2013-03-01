@@ -11,10 +11,9 @@ compass_config do |config|
   config.sass_options = {:debug_info => true}
 end
 
+activate :livereload
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
+activate :asset_hash , :exts =>  %w(.js .css)
 ###
 # Page command
 ###

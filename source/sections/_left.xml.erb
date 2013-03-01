@@ -1,11 +1,15 @@
 <b:section class='sidebar-left' id='sidebar-left' preferred='no'>
-  <b:widget xmlns:b="http://www.google.com/2005/gml/b" id="HTML1" locked="false" type="HTML">
-  <b:includable id="main">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="widget-content">
+  <b:widget xmlns:b="http://www.google.com/2005/gml/b" locked="false" type="HTML" id="HTML1">
+    <b:includable id="main">
       <%= partial 'partials/submenu' %>
-    </div>
-    <b:include name="quickedit"/>
-  </b:includable>
+      <b:include name="quickedit"/>
+    </b:includable>
+  </b:widget>
+  <b:widget xmlns:b="http://www.google.com/2005/gml/b" locked="false" type="HTML"  id="HTML2">
+    <b:includable id="main">
+      <%= partial 'partials/search' %>
+      <b:include name="quickedit"/>
+    </b:includable>
   </b:widget>
 
   <b:widget id='BlogArchive1' locked='true' title='Archivo' type='BlogArchive' />

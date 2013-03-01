@@ -23,6 +23,36 @@
     line-height: 32px
     &:hover
       color: #00a08e
+
+
+.widget.search-html
+  position: relative
+  border: 1px solid #ccc
+  +border-radius(0 0 5px 0)
+  text-align: center
+  margin-top: 11px
+  button
+    +hide-text
+    margin: 0
+    padding: 0
+    border: 0
+    position: absolute
+    bottom: -6px
+    left: -9px
+    cursor: pointer
+  input
+    color: #999
+    text-align: center
+    text-transform: uppercase
+    outline: 0
+    border: 0
+    width: 90%
+    margin: 0 auto
+    padding: 3px
+    height: 19px
+    line-height: 19px
+    font-size: 10px
+      
       
 
 //que hace widget
@@ -63,6 +93,9 @@
       &.open
         a
           height: 20px
+
+
+
       
       
 //which to show in each section
@@ -70,6 +103,12 @@
 .sidebar-left
   .widget
     display: none
+
+  .widget.search-html
+    display: block
+
+
+
 
 
 body.index
@@ -100,7 +139,7 @@ body.que-hace
   #content
     .sidebar-left.section
       padding-top: 60px
-      .widget.HTML
+      .widget.submenu-html
         display: block
 
 

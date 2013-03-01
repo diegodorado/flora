@@ -24,9 +24,15 @@ set_body_class = ->
 remove_posts = ->  
   $('body.index .post-outer.portfolio').remove()
 
-set_text_widget_classes = ->
+set_widget_classes = ->
   $('.widget.Text').each ->
     $(@).addClass "#{$(@).find('.title').text()}-text"
+
+  $('.widget.HTML').each ->
+    klass = $(@).find('.widget-content').attr('class').replace('widget-content','').trim()
+    console.log klass
+    $(@).addClass "#{klass}-html"
+
 
 format_posts = ->
   $('.post-outer .post-body').each ->
@@ -97,8 +103,21 @@ pager_hack = ->
   $('#pager').append(fake) if $('#pager .older').size() is 0
 
 fit_text = ->  
-
   $("#header .title").fitText(1.33, { minFontSize: '40px', maxFontSize: '75px' })
+
+fit_date = ->
+  split = (word)->
+    "#{word[0..2]}<i>#{word[3...]}</i>"
+  pattern = ///
+    (lunes|martes|miércoles|jueves|viernes|sábado|domingo)
+    (.*)
+    (enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)
+    (.*)
+  ///  
+  $('h4 .date').each ->
+    $(this).html $(this).text().replace pattern, (match, day, glue, month, year) ->
+      [split(day), glue, split(month), year].join ''
+
   
 $ ->
   kill_lightbox()
@@ -106,7 +125,7 @@ $ ->
   set_body_class()
   remove_posts()
   format_posts()
-  set_text_widget_classes()
+  set_widget_classes()
   colorize()
   bind_contact_links()
   pager_hack()
@@ -114,4 +133,4 @@ $ ->
   $(document.links).filter( () -> @hostname != window.location.hostname).attr('target', '_blank')
   $('body').removeClass 'loading'
   fit_text()
-
+  fit_date()

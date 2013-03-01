@@ -59,7 +59,7 @@ body.loading
   font-size: 15px
   margin-bottom: 3px
   min-height: 100px
-  overflow: hidden
+  +cf
   .section
     float: left
     &.sidebar-left //250
@@ -71,7 +71,14 @@ body.loading
       ul a
         line-height: 32px
       +mobile
-        display: none
+        padding-left: 7%
+        width: 86%
+        margin: 0
+        .widget
+          display: none
+          &.search-html
+            display: block
+        
     &.main //756
       background: image-url('dot.png') repeat-y
       padding-left: 84px

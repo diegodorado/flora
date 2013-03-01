@@ -53,6 +53,11 @@ $color-i: #009E8C
       a
         border-color: color($i)
 
+    .widget.search-html
+      border-color: color($i)
+      button
+        @extend .search-#{$i}
+      
     #footer .contact h6:hover
       color: color($i)
     
