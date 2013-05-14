@@ -1,3 +1,14 @@
+fix_placeholder = ->
+  #placeholder cant be centered in safari
+  #simulate plaholder behaviour for all browsers
+  $("[placeholder]").focus(->
+    input = $(this)
+    input.val ""  if input.val() is input.attr("placeholder")
+  ).blur(->
+    input = $(this)
+    input.val input.attr("placeholder")  if input.val() is "" or input.val() is input.attr("placeholder")
+  ).blur()
+
 
 kill_lightbox = ->
   $("a[href$=\"jpg\"],a[href$=\"png\"]").each (i, el) ->
@@ -121,6 +132,7 @@ fit_date = ->
   
 $ ->
   kill_lightbox()
+  fix_placeholder()
   set_posts_class()
   set_body_class()
   remove_posts()
