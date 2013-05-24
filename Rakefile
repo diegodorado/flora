@@ -1,6 +1,6 @@
-SSH_USER = 'otc2010'
+SSH_USER = 'onthecorner'
 SSH_HOST = 'onthecorner.com.ar'
-SSH_DIR  = 'www/htdocs/flora-assets'
+SSH_DIR  = 'onthecorner.com.ar/flora-assets'
 
 desc "Build the website from source"
 task :build do

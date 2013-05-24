@@ -13,7 +13,7 @@ end
 
 activate :livereload
 
-activate :asset_hash , :exts =>  %w(.js .css)
+#activate :asset_hash , :exts =>  %w(.js .css)
 ###
 # Page command
 ###

@@ -34,15 +34,15 @@ $color-i: #009E8C
   body.color-#{$i}
     .widget.Blog
       .post-outer h4
-        @extend .date-bg-#{$i}
+        @extend .date-bg-#{$i} !optional
         +mobile
           width: 100%
       .post-outer.biblioteca h4
-        @extend .date-bg-#{$i}-b
+        @extend .date-bg-#{$i}-b !optional
         +mobile
           width: 100%
       .post-outer.portfolio h4
-        @extend .date-bg-#{$i}-p
+        @extend .date-bg-#{$i}-p !optional
         +mobile
           width: 100%
       .post-body a
@@ -56,20 +56,20 @@ $color-i: #009E8C
     .widget.search-html
       border-color: color($i)
       button
-        @extend .search-#{$i}
+        @extend .search-#{$i} !optional
       
     #footer .contact h6:hover
       color: color($i)
     
     @each $icon in 'diseno' 'fb' 'tw' 'rss'
       #footer .footer-#{$icon}:hover
-        @extend .footer-#{$icon}-#{$i}
+        @extend .footer-#{$icon}-#{$i} !optional
 
         
   .archivedate.archive-color-#{$i}
     .toggle
       .zippy
-        @extend .arrows-#{$i}
+        @extend .arrows-#{$i} !optional
     .hierarchy //again: one ul per month
       .archivedate
         .post-count
